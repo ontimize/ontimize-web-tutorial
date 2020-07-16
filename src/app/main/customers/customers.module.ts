@@ -5,12 +5,14 @@ import { CustomersRoutingModule } from './customers-routing.module';
 import { CustomersHomeComponent } from "./customers-home/customers-home.component";
 import { CustomersDetailComponent } from './customers-detail/customers-detail.component';
 import { CustomersNewComponent } from './customers-new/customers-new.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     OntimizeWebModule,
-    CustomersRoutingModule
+    CustomersRoutingModule,
+    SharedModule
   ],
   declarations: [
     CustomersHomeComponent,
