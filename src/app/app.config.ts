@@ -1,7 +1,7 @@
 import { Config } from 'ontimize-web-ngx';
 
-import { SERVICE_CONFIG } from './shared/app.services.config';
 import { MENU_CONFIG } from './shared/app.menu.config';
+import { SERVICE_CONFIG } from './shared/app.services.config';
 
 export const CONFIG: Config = {
   // The base path of the URL used by app services.
