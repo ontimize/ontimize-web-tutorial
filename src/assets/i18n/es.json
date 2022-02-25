@@ -1,5 +1,5 @@
 {
-  "APP_TITLE": "JEE seed",
+  "APP_TITLE": "Bank Manager",
   "VERSION": "Versión",
   "EXAMPLE_LOGIN_INFO": "Usuario y contraseña de ejemplo",
   "USERNAME": "Usuario",
@@ -18,5 +18,12 @@
   "REMEMBER_ME": "Recuérdame",
   "FORGOT_PWD": "¿Has olvidado tu contraseña?",
   "FOOTER_CREATED_BY": "Creado por Imatia Innovation",
-  "FOOTER_RIGHTS": "Todos los derechos reservados"
+  "FOOTER_RIGHTS": "Todos los derechos reservados",
+  "CUSTOMERS": "Clientes",
+  "ID": "Id.",
+  "NAME": "Nombre",
+  "SURNAME": "Apellido",
+  "STARTDATE": "Fecha inicio",
+  "EMAIL": "Correo",
+  "PHOTO": "Fotografía"
 }
