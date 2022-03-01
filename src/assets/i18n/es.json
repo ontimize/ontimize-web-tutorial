@@ -58,9 +58,9 @@
   "ACCOUNTTYP": "Tipo de cuenta",
   "ACCOUNTNUMBER": "Nº cuenta",
   "INTERESRATE_MONTHLY": "% interés mensual",
-  "BRANCH_INFORMATION":"Información de la sucursal",
-  "CUSTOMERS_INFORMATION":"Clientes de la sucursal",
-  "BALANCE":"Balance",
+  "BRANCH_INFORMATION": "Información de la sucursal",
+  "CUSTOMERS_INFORMATION": "Clientes de la sucursal",
+  "BALANCE": "Balance",
   "DATE_": "Fecha",
   "CONCEPT": "Concepto",
   "MOVEMENT": "Movimiento",
@@ -69,5 +69,13 @@
   "INIT": "Inicio",
   "END": "Fin",
   "FILTER": "Filtrar",
-  "CLEAR": "Limpiar"
+  "CLEAR": "Limpiar",
+  "title": "Título",
+  "director": "Director",
+  "episode_id": "Episodio",
+  "producer": "Productor",
+  "release_date": "Fecha Lanzamiento",
+  "opening_crawl": "Texto inicio",
+  "FILMS": "Películas",
+  "SERVICEEX": "Servicio Externo"
 }
