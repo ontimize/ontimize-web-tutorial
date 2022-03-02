@@ -92,5 +92,6 @@
   "BASIC": "Básico",
   "ACCOUNT_GRAPHIC": "Gráficos",
   "ACCOUNT_INFORMATION": "Detalle de cuentas",
-  "ACCOUNTS_UNDER": "Cuentas inferiores a"
+  "ACCOUNTS_UNDER": "Cuentas inferiores a",
+  "longTask": "Tarea larga"
 }
