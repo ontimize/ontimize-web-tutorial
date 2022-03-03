@@ -1,5 +1,5 @@
 <o-form fxFill #form service="customers" entity="customer" keys="CUSTOMERID" header-actions="R;I;U;D"
-  show-header-navigation="no">
+  show-header-navigation="no" (onDataLoaded)="onFormDataLoaded($event)">
   <o-text-input attr="CUSTOMERID" sql-type="INTEGER" enabled="no"></o-text-input>
   <o-row fxFlex>
     <o-column>
@@ -62,5 +62,11 @@
         <o-button (click)="createNewAccount()" label="Create new account"></o-button>
       </mat-tab>
     </mat-tab-group>
+    <div fxFlex="40" fxFlex.md="100" *ngIf="hasGPSPositition()">
+      <o-map class="o-map" [center]="getPositionGPS()" zoom="10" min-zoom="3" max-zoom="20" zoom-control="yes"
+        search-control="no" layer-panel-visible="no">
+        <o-map-layer layer-type="marker" layer-id="location_marker" [layer-center]="getPositionGPS()"></o-map-layer>
+      </o-map>
+    </div>
   </o-row>
 </o-form>
