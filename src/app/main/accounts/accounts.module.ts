@@ -16,7 +16,7 @@ import { AddMovementComponent } from './add-movement/add-movement.component';
     CommonModule,
     SharedModule,
     OntimizeWebModule,
-    AccountsRoutingModule
+    AccountsRoutingModule,
   ]
 })
 export class AccountsModule { }

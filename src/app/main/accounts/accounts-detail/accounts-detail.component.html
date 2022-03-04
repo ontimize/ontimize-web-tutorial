@@ -42,4 +42,13 @@
       </o-table>
     </div>
   </div>
+  <div layout="column" fxFlex>
+    <div fxLayout="row" fxFlexFill>
+      <o-chart fxFlex type="pie" service="movements" entity="movement" parent-keys="ACCOUNTID" x-axis="CONCEPT"
+        y-axis="MOVEMENT" query-on-init="no" [chart-parameters]="movementTypesChartParams" class="movements-chart">
+      </o-chart>
+      <o-chart fxFlex type="line" x-label="Time" y-label="Amount (€)" service="movements" entity="movement"
+        x-axis="DATE_" y-axis="MOVEMENT" x-data-type="time" parent-keys="ACCOUNTID"></o-chart>
+    </div>
+  </div>
 </o-form>
