@@ -92,5 +92,6 @@
   "ACCOUNT_GRAPHIC": "Graphics",
   "ACCOUNT_INFORMATION": "Account details",
   "ACCOUNTS_UNDER": "Accounts under",
-  "longTask": "Long task"
+  "longTask": "Long task",
+  "OPEN_ACCOUNT_SELECTED": "Open Account Selected"
 }

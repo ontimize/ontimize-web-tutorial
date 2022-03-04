@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AccountsDetailComponent } from '../accounts/accounts-detail/accounts-detail.component';
 import { CustomersDetailComponent } from './customers-detail/customers-detail.component';
 import { CustomersHomeComponent } from './customers-home/customers-home.component';
 import { CustomersNewComponent } from './customers-new/customers-new.component';
 
 
-const routes: Routes =  [{
-  path : '',
+const routes: Routes = [{
+  path: '',
   component: CustomersHomeComponent
 },
 {
@@ -16,6 +17,10 @@ const routes: Routes =  [{
 {
   path: ":CUSTOMERID",
   component: CustomersDetailComponent
+},
+{
+  path: ":CUSTOMERID/:ACCOUNTID",
+  component: AccountsDetailComponent
 }];
 
 @NgModule({
