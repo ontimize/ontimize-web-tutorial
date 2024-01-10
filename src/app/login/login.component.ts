@@ -1,32 +1,32 @@
-import { Component, OnInit, Inject, NgZone, Injector } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, Inject, Injector, OnInit, ViewEncapsulation } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService, LocalStorageService, NavigationService } from 'ontimize-web-ngx';
 import { Observable } from 'rxjs';
-
-import { LoginService, NavigationService, APP_CONFIG, Config } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'login',
   styleUrls: ['./login.component.scss'],
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup;
-  user: FormControl;
-  password: FormControl;
+  loginForm: FormGroup = new FormGroup({});
+  userCtrl: FormControl = new FormControl('', Validators.required);
+  pwdCtrl: FormControl = new FormControl('', Validators.required);
   sessionExpired = false;
 
   router: Router;
 
   constructor(
     private actRoute: ActivatedRoute,
-    private zone: NgZone,
     router: Router,
     @Inject(NavigationService) public navigation: NavigationService,
-    @Inject(LoginService) private loginService: LoginService,
-    public injector: Injector) {
-
+    @Inject(AuthService) private authService: AuthService,
+    @Inject(LocalStorageService) private localStorageService,
+    public injector: Injector
+  ) {
     this.router = router;
 
     const qParamObs: Observable<any> = this.actRoute.queryParams;
@@ -44,34 +44,28 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): any {
-    this.loginService.sessionExpired();
     this.navigation.setVisible(false);
 
-    const userCtrl: FormControl = new FormControl('', Validators.required);
-    const pwdCtrl: FormControl = new FormControl('', Validators.required);
+    this.loginForm.addControl('username', this.userCtrl);
+    this.loginForm.addControl('password', this.pwdCtrl);
 
-    this.loginForm = new FormGroup({});
-    this.loginForm.addControl('username', userCtrl);
-    this.loginForm.addControl('password', pwdCtrl);
-
-    if (this.loginService.isLoggedIn()) {
+    if (this.authService.isLoggedIn()) {
       this.router.navigate(['../'], { relativeTo: this.actRoute });
+    } else {
+      this.authService.clearSessionData();
     }
   }
 
   login() {
-    if (!this.loginForm.valid) {
-      alert('Campos no válidos');
-    }
-
-    const userName = this.loginForm.value['username'];
-    const password = this.loginForm.value['password'];
+    const userName = this.loginForm.value.username;
+    const password = this.loginForm.value.password;
     if (userName && userName.length > 0 && password && password.length > 0) {
       const self = this;
-      this.loginService.login(userName, password).subscribe(() => {
-        self.sessionExpired = false;
-        self.router.navigate(['../'], { relativeTo: this.actRoute });
-      }, this.handleError);
+      this.authService.login(userName, password)
+        .subscribe(() => {
+          self.sessionExpired = false;
+          self.router.navigate(['../'], { relativeTo: this.actRoute });
+        }, this.handleError);
     }
   }
 
@@ -83,4 +77,5 @@ export class LoginComponent implements OnInit {
       default: break;
     }
   }
+
 }
