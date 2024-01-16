@@ -1,9 +1,9 @@
 {
-  "name": "ontimize-web-ngx-jee-seed",
+  "name": "bankmanager-web",
   "version": "15.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4299",
+    "start": "ng serve --port 4200 -o --host localhost",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
