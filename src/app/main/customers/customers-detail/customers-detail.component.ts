@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { intRateMonthlyFunction } from 'src/app/shared/shared.module';
 
 @Component({
   selector: 'app-customers-detail',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./customers-detail.component.css']
 })
 export class CustomersDetailComponent {
+
+  public intRateMonthly = intRateMonthlyFunction;
 
 }

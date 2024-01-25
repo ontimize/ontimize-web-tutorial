@@ -5,6 +5,7 @@ import { CustomersRoutingModule } from './customers-routing.module';
 import { CustomersHomeComponent } from './customers-home/customers-home.component';
 import { CustomersDetailComponent } from './customers-detail/customers-detail.component';
 import { CustomersNewComponent } from './customers-new/customers-new.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { CustomersNewComponent } from './customers-new/customers-new.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     OntimizeWebModule,
     CustomersRoutingModule
   ]
