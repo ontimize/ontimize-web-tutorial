@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { AccountsRoutingModule } from './accounts-routing.module';
 import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     OntimizeWebModule,
     AccountsRoutingModule
   ]
