@@ -1,16 +1,16 @@
-<o-form-layout-manager title="{{'ACCOUNTS' | oTranslate }}" separator=" " mode="dialog" label-columns="ANID">
-    <o-table attr="accountsTable" service="branches" entity="account" keys="ACCOUNTID"
-        columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-        visible-columns="ACCOUNTNUMBER;STARTDATE;ENDDATE;INTERESRATE;INTERESRATE_MONTHLY;ACCOUNTTYP" query-rows="20">
-        <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
-        <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
-        <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" width="150px" decimal-separator=","
-            content-align="center"></o-table-column>
-        <o-table-column attr="ACCOUNTNUMBER" title="ACCOUNTNUMBER" content-align="center">
-            <app-account-number-render></app-account-number-render>
-        </o-table-column>
-        <o-table-column-calculated attr="INTERESRATE_MONTHLY" title="INTERESRATE_MONTHLY"
-            [operation-function]="intRateMonthly" type="percentage" decimal-separator="," content-align="center">
-        </o-table-column-calculated>
-    </o-table>
-</o-form-layout-manager>
+<!-- <o-form-layout-manager title="{{'ACCOUNTS' | oTranslate }}" separator=" " mode="dialog" label-columns="ANID"> -->
+<o-table attr="accountsTable" service="branches" entity="account" keys="ACCOUNTID"
+    columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+    visible-columns="ACCOUNTNUMBER;STARTDATE;ENDDATE;INTERESRATE;INTERESRATE_MONTHLY;ACCOUNTTYP" query-rows="20">
+    <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+    <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
+    <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" width="150px" decimal-separator=","
+        content-align="center"></o-table-column>
+    <o-table-column attr="ACCOUNTNUMBER" title="ACCOUNTNUMBER" content-align="center">
+        <app-account-number-render></app-account-number-render>
+    </o-table-column>
+    <o-table-column-calculated attr="INTERESRATE_MONTHLY" title="INTERESRATE_MONTHLY"
+        [operation-function]="intRateMonthly" type="percentage" decimal-separator="," content-align="center">
+    </o-table-column-calculated>
+</o-table>
+<!-- </o-form-layout-manager> -->
