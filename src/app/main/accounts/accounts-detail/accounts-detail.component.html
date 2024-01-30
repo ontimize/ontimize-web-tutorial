@@ -14,21 +14,24 @@
     </div>
     <div fxFlex fxLayout="row" fxLayoutGap="8px">
         <o-table fxFlex="50" attr="customersTable" service="customers" entity="vCustomerAccount" parent-keys="ACCOUNTID"
-            keys="CUSTOMERACCOUNTID" columns="ID;NAME;SURNAME;CUSTOMERID;CUSTOMERACCOUNTID"
-            visible-columns="ID;NAME;SURNAME" query-rows="15" insert-button="yes" insert-form-route="addcustomer/new"
-            detail-mode="none">
+            keys="CUSTOMERACCOUNTID" columns="ID;NAME;SURNAME;CUSTOMERID;CUSTOMERACCOUNTID;CUSTOMERTYPEID"
+            visible-columns="ID;NAME;SURNAME;CUSTOMERTYPEID" query-rows="15" insert-button="yes"
+            insert-form-route="addcustomer/new" detail-mode="none">
             <o-table-column attr="ID" title="ID" content-align="center"></o-table-column>
             <o-table-column attr="NAME" title="NAME" content-align="center"></o-table-column>
-            <o-table-column attr="SURNAME" title="SURNAME" content-align="center"></o-table-column>
+            <o-table-column attr="SURNAME" title="SURNAME"></o-table-column>
+            <o-table-column attr="CUSTOMERTYPEID" title="CUSTOMERTYPEID" content-align="center">
+                <app-customertype-column-renderer></app-customertype-column-renderer>
+            </o-table-column>
         </o-table>
         <o-table fxFlex="50" attr="movementsTable" service="movements" entity="movement" parent-keys="ACCOUNTID"
             keys="MOVEMENTID" columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID"
             visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-rows="15" insert-form-route="addMovement/new"
             detail-mode="none" insert-button="yes">
             <o-table-column attr="DATE_" title="DATE_" type="date" format="LL"></o-table-column>
-            <o-table-column attr="MOVEMENT" title="MOVEMENT" type="currency" currency-symbol="€"
-                currency-symbol-position="right" thousand-separator="." decimal-separator=","
-                content-align="center"></o-table-column>
+            <o-table-column attr="MOVEMENT" title="MOVEMENT" content-align="center">
+                <app-movement-column-renderer></app-movement-column-renderer>
+            </o-table-column>
             <o-table-column attr="MOVEMENTTYPEID" title="MOVEMENTTYPEID">
                 <o-table-cell-renderer-service service="movements" entity="movementType"
                     columns="DESCRIPTION;MOVEMENTTYPEID" value-column="DESCRIPTION">

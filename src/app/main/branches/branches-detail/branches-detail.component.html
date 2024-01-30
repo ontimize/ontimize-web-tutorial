@@ -12,11 +12,14 @@
     </o-column>
     <o-row title="{{ 'CUSTOMERS_INFORMATION' | oTranslate }}">
         <o-table fxFlex attr="customerAccountTable" service="customers" entity="vCustomerAccount" parent-keys="OFFICEID"
-            columns="ID;NAME;SURNAME;CUSTOMERID" visible-columns="ID;NAME;SURNAME" insert-button="no" keys="CUSTOMERID"
-            query-rows="5">
+            columns="ID;NAME;SURNAME;CUSTOMERID;CUSTOMERTYPEID" visible-columns="ID;NAME;SURNAME;CUSTOMERTYPEID"
+            insert-button="no" keys="CUSTOMERID" query-rows="5">
             <o-table-column attr="ID" title="ID"></o-table-column>
             <o-table-column attr="NAME" title="NAME"></o-table-column>
             <o-table-column attr="SURNAME" title="SURNAME"></o-table-column>
+            <o-table-column attr="CUSTOMERTYPEID" title="CUSTOMERTYPEID" content-align="center">
+                <app-customertype-column-renderer></app-customertype-column-renderer>
+            </o-table-column>
         </o-table>
     </o-row>
 </o-form>
