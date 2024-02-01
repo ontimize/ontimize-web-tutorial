@@ -1,13 +1,16 @@
-<o-form-layout-manager attr="employeesHome" title="{{'EMPLOYEES' | oTranslate }}" separator=" " mode="dialog"
-    label-columns="EMPLOYEENAME;EMPLOYEESURNAME">
-    <o-table attr="employeesTable" service="employees" entity="employee" keys="EMPLOYEEID"
-        columns="EMPLOYEEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEPHOTO;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEETYPEID"
-        visible-columns="EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEEMAIL;EMPLOYEEADDRESS;EMPLOYEESTARTDATE"
-        query-rows="15">
-        <o-table-column attr="EMPLOYEEPHOTO" title="EMPLOYEEPHOTO" orderable="no" searchable="no" type="image"
-            avatar="no" empty-image="assets/images/no-image.png" image-type="base64" width="150px"></o-table-column>
-        <o-table-column attr="EMPLOYEESTARTDATE" title="EMPLOYEESTARTDATE" type="date" format="LL"></o-table-column>
-        <o-table-column attr="EMPLOYEENAME" title="EMPLOYEENAME" width="150px"></o-table-column>
-        <o-table-column attr="EMPLOYEESURNAME" title="EMPLOYEESURNAME" width="150px"></o-table-column>
-    </o-table>
-</o-form-layout-manager>
+<o-grid #employeesGrid attr="employeesGrid" title="EMPLOYEES" service="employees" entity="employee" keys="EMPLOYEEID"
+    columns="EMPLOYEEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEPHOTO;EMPLOYEEADDRESS;EMPLOYEEPHONE;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;NAME;EMPLOYEETYPEID;EMPLOYEETYPENAME"
+    query-rows="8" page-size-options="8;10;12" orderable="true"
+    sortable-columns="EMPLOYEENAME;EMPLOYEESURNAME:asc;EMPLOYEESURNAME:desc;EMPLOYEEEMAIL" insert-button="true"
+    pagination-controls="true" gutter-size="8px" fixed-header="yes" grid-item-height="300px" detail-mode="none"
+    insert-button-floatable="no">
+    <o-grid-item *ngFor="let data of employeesGrid.dataArray">
+        <div (click)="openDetail(data)" fxLayout="column" fxLayoutAlign="space-evenly center"
+            class="mat-elevation-z1 employeeCard">
+            <img [src]="getImageSrc(data.EMPLOYEEPHOTO)" width="144px" height="200px">
+            <span><strong>{{ data.EMPLOYEENAME }} {{data.EMPLOYEESURNAME}}</strong></span>
+            <span><em>{{ data.EMPLOYEETYPENAME }}</em></span>
+            <span class="office">{{ data.NAME }}</span>
+        </div>
+    </o-grid-item>
+</o-grid>

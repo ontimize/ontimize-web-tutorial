@@ -1,34 +1,29 @@
-<o-form attr="employeesDetail" service="employees" entity="employee" keys="EMPLOYEEID" header-actions="R;U;D"
-    show-header-navigation="yes">
-    <o-integer-input attr="EMPLOYEEID" sql-type="INTEGER" enabled="no"></o-integer-input>
-    <div fxLayout="row">
-        <div>
-            <o-image attr="EMPLOYEEPHOTO" empty-image="assets/images/no-image.png" sql-type="OTHER"></o-image>
+<div fxFill fxLayout="column" fxLayoutAlign="space-evenly center">
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="4px" class="employeeFirst">
+            <img [src]="getImageSrc(data.EMPLOYEEPHOTO)" width="144px" height="200px">
+            <span><strong>{{ data.EMPLOYEENAME }} {{ data.EMPLOYEESURNAME }}</strong></span>
+            <mat-divider></mat-divider>
+            <span><em>{{ data.EMPLOYEETYPENAME }}</em></span>
+            <mat-divider></mat-divider>
         </div>
-        <o-column fxFlex title="EMPLOYEE_PERSONAL_INFORMATION">
-            <div fxLayout="row" fxLayoutGap="8px">
-                <o-text-input fxFlex="40" attr="EMPLOYEENAME" required="yes"></o-text-input>
-                <o-text-input fxFlex="40" attr="EMPLOYEESURNAME" required="yes"></o-text-input>
-                <o-date-input fxFlex="20" attr="EMPLOYEESTARTDATE"></o-date-input>
-            </div>
-            <div fxLayout="row" fxLayoutGap="8px">
-                <o-text-input fxFlex="40" attr="EMPLOYEEPHONE"></o-text-input>
-                <o-text-input fxFlex="40" attr="EMPLOYEEEMAIL"></o-text-input>
-                <o-list-picker fxFlex="20" attr="EMPLOYEETYPEID" service="employees" entity="employeeType"
-                    keys="EMPLOYEETYPEID" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME" visible-columns="EMPLOYEETYPENAME"
-                    value-column="EMPLOYEETYPEID"></o-list-picker>
-            </div>
-            <div fxLayout="row" fxLayoutGap="8px">
-                <o-text-input fxFlex="65" attr="EMPLOYEEADDRESS"></o-text-input>
-                <o-combo fxFlex="35" attr="OFFICEID" required="yes" service="branches" entity="branch" keys="OFFICEID"
-                    columns="OFFICEID;NAME" visible-columns="NAME" value-column="OFFICEID"></o-combo>
-            </div>
-            <div fxLayout="row" fxLayoutGap="8px">
-                <o-real-input fxFlex="50" attr="LONGITUDE" decimal-separator="," max-decimal-digits="10"
-                    min-decimal-digits="0"></o-real-input>
-                <o-real-input fxFlex="50" attr="LATITUDE" decimal-separator="," max-decimal-digits="10"
-                    min-decimal-digits="0"></o-real-input>
-            </div>
-        </o-column>
+        <div fxLayout="column" class="employeeSecond">
+            <span *ngIf="data.EMPLOYEEEMAIL;else no_mail">
+                <mat-icon>email</mat-icon><span>{{ data.EMPLOYEEEMAIL }}</span>
+            </span>
+            <ng-template #no_mail><span><mat-icon>email</mat-icon><span>{{ "NO_DATA_AVAILABLE" |
+                        oTranslate}}</span></span></ng-template>
+            <span *ngIf="data.EMPLOYEEPHONE;else no_phone">
+                <mat-icon>smartphone</mat-icon><span>{{ data.EMPLOYEEPHONE }}</span>
+            </span>
+            <ng-template #no_phone><span><mat-icon>smartphone</mat-icon><span>{{ "NO_DATA_AVAILABLE" |
+                        oTranslate}}</span></span></ng-template>
+            <span *ngIf="data.EMPLOYEEADDRESS;else no_address">
+                <mat-icon>home</mat-icon><span>{{ data.EMPLOYEEADDRESS }}</span>
+            </span>
+            <ng-template #no_address><span><mat-icon>home</mat-icon><span>{{ "NO_DATA_AVAILABLE" |
+                        oTranslate}}</span></span></ng-template>
+        </div>
     </div>
-</o-form>
+    <span layout-margin-right fxFlexAlign="end"><mat-icon>domain</mat-icon>{{ data.NAME }}</span>
+</div>

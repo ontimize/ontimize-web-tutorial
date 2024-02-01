@@ -69,5 +69,7 @@
   "INIT": "Inicio",
   "END": "Fin",
   "FILTER": "Filtrar",
-  "CLEAR": "Limpiar"
+  "CLEAR": "Limpiar",
+  "EMPLOYEETYPENAME": "Cargo",
+  "NO_DATA_AVAILABLE": "No hay información disponible"
 }

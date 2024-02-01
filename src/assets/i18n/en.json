@@ -68,5 +68,7 @@
   "INIT": "Init",
   "END": "End",
   "FILTER": "Filter",
-  "CLEAR": "Clear"
+  "CLEAR": "Clear",
+  "EMPLOYEETYPENAME": "Job title",
+  "NO_DATA_AVAILABLE": "No data available"
 }
