@@ -71,5 +71,13 @@
   "FILTER": "Filtrar",
   "CLEAR": "Limpiar",
   "EMPLOYEETYPENAME": "Cargo",
-  "NO_DATA_AVAILABLE": "No hay información disponible"
+  "NO_DATA_AVAILABLE": "No hay información disponible",
+  "title": "Título",
+  "director": "Director",
+  "episode_id": "Episodio",
+  "producer": "Productor",
+  "release_date": "Fecha Lanzamiento",
+  "opening_crawl": "Texto inicio",
+  "FILMS": "Películas",
+  "SERVICEEX": "Servicio Externo"
 }

@@ -70,5 +70,13 @@
   "FILTER": "Filter",
   "CLEAR": "Clear",
   "EMPLOYEETYPENAME": "Job title",
-  "NO_DATA_AVAILABLE": "No data available"
+  "NO_DATA_AVAILABLE": "No data available",
+  "title": "Title",
+  "director": "Director",
+  "episode_id": "Episode",
+  "producer": "Producer",
+  "release_date": "Release Date",
+  "opening_crawl": "Opening",
+  "FILMS": "Films",
+  "SERVICEEX": "External Service"
 }
