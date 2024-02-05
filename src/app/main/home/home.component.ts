@@ -18,4 +18,8 @@ export class HomeComponent {
     this.router.navigate(['../', 'login'], { relativeTo: this.actRoute });
   }
 
+  goToDocumentation() {
+    window.open("https://ontimizeweb.github.io/docs/v15", "_blank");
+  }
+
 }
