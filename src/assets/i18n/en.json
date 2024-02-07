@@ -91,5 +91,9 @@
   "VIP": "VIP",
   "NORMAL": "Normal",
   "OTHERS": "Others",
-  "BASIC": "Basic"
+  "BASIC": "Basic",
+  "ACCOUNTS_UNDER": "Accounts under",
+  "OVER": "Over",
+  "UNDER": "Under",
+  "CRITERIA_VALUE": "Criteria"
 }
