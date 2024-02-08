@@ -6,6 +6,7 @@ import { CustomertypeColumnRendererComponent } from '../main/customers/customers
 import { MovementColumnRendererComponent } from '../main/accounts/accounts-detail/movement-column-renderer/movement-column-renderer.component';
 import { MENU_COMPONENTS } from './app.menu.config';
 import { OChartModule } from 'ontimize-web-ngx-charts';
+import { AccountsDetailComponent } from '../main/accounts/accounts-detail/accounts-detail.component';
 
 export function intRateMonthlyFunction(rowData: Array<any>): number {
   return rowData["INTERESRATE"] / 12;
@@ -20,7 +21,8 @@ export function intRateMonthlyFunction(rowData: Array<any>): number {
     AccountNumberRenderComponent,
     CustomertypeColumnRendererComponent,
     MovementColumnRendererComponent,
-    ...MENU_COMPONENTS
+    ...MENU_COMPONENTS,
+    AccountsDetailComponent
   ],
   exports: [
     CommonModule,
@@ -28,7 +30,8 @@ export function intRateMonthlyFunction(rowData: Array<any>): number {
     CustomertypeColumnRendererComponent,
     MovementColumnRendererComponent,
     ...MENU_COMPONENTS,
-    OChartModule
+    OChartModule,
+    AccountsDetailComponent
   ]
 })
 export class SharedModule { }

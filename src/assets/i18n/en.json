@@ -96,5 +96,6 @@
   "OVER": "Over",
   "UNDER": "Under",
   "CRITERIA_VALUE": "Criteria",
-  "longTask": "Long task"
+  "longTask": "Long task",
+  "OPEN_ACCOUNT_SELECTED": "Open Account Selected"
 }
