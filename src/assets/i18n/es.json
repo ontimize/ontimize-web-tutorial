@@ -98,5 +98,6 @@
   "UNDER": "Por debajo",
   "CRITERIA_VALUE": "Criterio",
   "longTask": "Tarea larga",
-  "OPEN_ACCOUNT_SELECTED": "Abrir cuenta seleccionada"
+  "OPEN_ACCOUNT_SELECTED": "Abrir cuenta seleccionada",
+  "CREATE_ACCOUNT": "Crear cuenta"
 }

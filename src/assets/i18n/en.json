@@ -97,5 +97,6 @@
   "UNDER": "Under",
   "CRITERIA_VALUE": "Criteria",
   "longTask": "Long task",
-  "OPEN_ACCOUNT_SELECTED": "Open Account Selected"
+  "OPEN_ACCOUNT_SELECTED": "Open Account Selected",
+  "CREATE_ACCOUNT": "Create account"
 }
