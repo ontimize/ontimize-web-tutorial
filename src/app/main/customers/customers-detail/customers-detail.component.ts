@@ -15,6 +15,8 @@ export class CustomersDetailComponent {
   @ViewChild('accountCustomerTable') accountTable: OTableComponent;
   @ViewChild('form') form: OFormComponent;
   public intRateMonthly = intRateMonthlyFunction;
+  public longitude;
+  public latitude;
 
   constructor(
     private router: Router,
@@ -39,6 +41,26 @@ export class CustomersDetailComponent {
         STARTDATE: date
       }, disableClose: false
     })
+  }
+
+  onFormDataLoaded(data: any) {
+    if (data.LATITUDE) {
+      this.latitude = data.LATITUDE;
+    }
+    if (data.LONGITUDE) {
+      this.longitude = data.LONGITUDE;
+    }
+  }
+
+  hasGPSPositition() {
+    if (this.latitude && this.longitude) {
+      return true;
+    }
+    return false;
+  }
+
+  getPositionGPS() {
+    return this.latitude + ',' + this.longitude;
   }
 
 }

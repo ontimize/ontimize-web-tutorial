@@ -1,12 +1,12 @@
 <o-form #form attr="customerDetail" service="customers" entity="customer" keys="CUSTOMERID" header-actions="R;I;U;D"
-    show-header-navigation="no" class="fill-form">
+    show-header-navigation="no" class="fill-form" (onDataLoaded)="onFormDataLoaded($event)">
     <o-text-input attr="CUSTOMERID" sql-type="INTEGER" enabled="no"></o-text-input>
     <div fxFlex fxLayout="row" fxLayoutGap="8px">
         <div>
             <o-image id="CUSTOMER_PHOTO" attr="PHOTO" empty-image="assets/images/no-image.png"
                 sql-type="OTHER"></o-image>
         </div>
-        <mat-tab-group fxFlex>
+        <mat-tab-group fxFlex="60">
             <mat-tab label="{{ 'CUSTOMER_PERSONAL_INFORMATION' | oTranslate }}">
                 <div fxLayout="row" fxLayoutGap="8px">
                     <o-text-input fxFlex="40" attr="NAME" required="yes"></o-text-input>
@@ -54,5 +54,12 @@
                 </o-table>
             </mat-tab>
         </mat-tab-group>
+        <div fxFlex="40" *ngIf="hasGPSPositition()">
+            <o-map class="o-map" [center]="getPositionGPS()" zoom="10" min-zoom="3" max-zoom="20" zoom-control="yes"
+                search-control="no" layer-panel-visible="no">
+                <o-map-layer layer-type="marker" layer-id="location_marker"
+                    [layer-center]="getPositionGPS()"></o-map-layer>
+            </o-map>
+        </div>
     </div>
 </o-form>
